@@ -3,6 +3,7 @@ import profileImage2 from './img/profile-image2.png';
 import WeatherForecast from './img/WeatherForecast.png';
 import TablenomsSite from './img/TablenomsSite.png';
 import StopClock from './img/StopClock.png';
+import onlineCodeEdtior from './img/onlineCodeEdtior.png';
 import Qualification from './img/Qualification.png';
 import linkedin from './img/linkedin_logo_icon.png';
 import instagram from './img/instagram_logo_icon.png';
@@ -48,6 +49,9 @@ export default function Main() {
         }
         else if(e.currentTarget.id === 'projectStopClock'){
             window.location.href='https://arjunr7019.github.io/StopClock/';
+        }
+        else if(e.currentTarget.id === 'projectOnlineCodeEdtior'){
+            window.location.href='https://arjunr7019.github.io/online-code-editor/';
         }
         else if(e.currentTarget.id === 'LinkedIn'){
             window.location.href='https://www.linkedin.com/in/arjun-r-634413236/';
@@ -170,6 +174,13 @@ export default function Main() {
                 <div className="card-body d-flex justify-content-start align-items-start flex-column">
                     <h5 className="card-title fw-bold pb-2">Stop Clock</h5>
                     <a onClick={DownloadLinks} id="projectStopClock" className="btn-for-projects">Git Deploy</a>
+                </div>
+            </div>
+            <div className="card border-light mb-3 mb-sm-0">
+                <img src={onlineCodeEdtior} className="card-img-top" alt="ProjectImage" />
+                <div className="card-body d-flex justify-content-start align-items-start flex-column">
+                    <h5 className="card-title fw-bold pb-2">Online Code Edtior</h5>
+                    <a onClick={DownloadLinks} id="projectOnlineCodeEdtior" className="btn-for-projects">Git Deploy</a>
                 </div>
             </div>
         </div>
