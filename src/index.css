@@ -109,6 +109,7 @@
     text-decoration: none;
     color: black;
     transition: .4s ease-in-out;
+    cursor: pointer;
 }
 
 .nav-main {
