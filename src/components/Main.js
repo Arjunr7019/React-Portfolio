@@ -32,13 +32,15 @@ export default function Main() {
         }
     };
 
-    const onClickVisibilityChange = () => {
+    const onClickVisibilityChange = (e) => {
+        e.preventDefault();
         document.getElementById('smNavItems').style.opacity = "0";
         navMenuChangeForSm();
     }
 
     const DownloadLinks = (e) => {
-        console.log(e.currentTarget.id);
+        e.preventDefault();
+        // console.log(e.currentTarget.id);
         if (e.currentTarget.id === 'resumeBtn') {
             window.location.href = 'https://drive.google.com/file/d/1nNLnxm2NNhoyu0BNQhZHcrhs8Hku8mua/view?usp=drive_link';
         }
@@ -142,11 +144,36 @@ export default function Main() {
                 </div>
                 <div id="smNavItems" className="navItemsForSm p-4 rounded-4">
                     <ul className='nav-content d-flex flex-column justify-content-around p-0 m-0'>
-                        <li><a id='a' className="nav-text fs-3" onClick={onClickVisibilityChange} >About</a></li>
-                        <li><a id='b' className="nav-text fs-3" onClick={onClickVisibilityChange} >Projects</a></li>
-                        <li><a id='c' className="nav-text fs-3" onClick={onClickVisibilityChange} >Qualification</a></li>
-                        <li><a id='d' className="nav-text fs-3" onClick={onClickVisibilityChange} >Skills</a></li>
-                        <li><a id='e' className="nav-text fs-3" onClick={onClickVisibilityChange} >Contact</a>
+                        <li><Link id='a' href='/' className="nav-text fs-3" onClick={onClickVisibilityChange}
+                            to="spyAbout"
+                            spy={true}
+                            smooth={true}
+                            offset={-160}
+                            duration={100} >About</Link></li>
+                        <li><Link id='b' href='/' className="nav-text fs-3" onClick={onClickVisibilityChange}
+                            to="spyProjects"
+                            spy={true}
+                            smooth={true}
+                            offset={-150}
+                            duration={100}>Projects</Link></li>
+                        <li><Link id='c' href='/' className="nav-text fs-3" onClick={onClickVisibilityChange}
+                            to="spyQualification"
+                            spy={true}
+                            smooth={true}
+                            offset={-150}
+                            duration={100}>Qualification</Link></li>
+                        <li><Link id='d' href='/' className="nav-text fs-3" onClick={onClickVisibilityChange}
+                            to="spySkills"
+                            spy={true}
+                            smooth={true}
+                            offset={-150}
+                            duration={100}>Skills</Link></li>
+                        <li><Link id='e' href='/' className="nav-text fs-3" onClick={onClickVisibilityChange}
+                            to="spyContact"
+                            spy={true}
+                            smooth={true}
+                            offset={-150}
+                            duration={100}>Contact</Link>
                         </li>
                     </ul>
                 </div>
@@ -184,28 +211,28 @@ export default function Main() {
                         <img src={WeatherForecast} className="card-img-top" alt="ProjectImage" />
                         <div className="card-body d-flex justify-content-start align-items-start flex-column">
                             <h5 className="card-title fw-bold pb-2">Weather Forecast</h5>
-                            <a onClick={DownloadLinks} id="projectWeather" className="btn-for-projects">Git Deploy</a>
+                            <a href='/' onClick={DownloadLinks} id="projectWeather" className="btn-for-projects">Git Deploy</a>
                         </div>
                     </div>
                     <div className="card border-light mb-3 mb-sm-0">
                         <img src={TablenomsSite} className="card-img-top" alt="ProjectImage" />
                         <div className="card-body d-flex justify-content-start align-items-start flex-column">
                             <h5 className="card-title fw-bold pb-2">Tablenoms Site</h5>
-                            <a onClick={DownloadLinks} id="projectTablenoms" className="btn-for-projects">Git Deploy</a>
+                            <a href='/' onClick={DownloadLinks} id="projectTablenoms" className="btn-for-projects">Git Deploy</a>
                         </div>
                     </div>
                     <div className="card border-light mb-3 mb-sm-0">
                         <img src={StopClock} className="card-img-top" alt="ProjectImage" />
                         <div className="card-body d-flex justify-content-start align-items-start flex-column">
                             <h5 className="card-title fw-bold pb-2">Stop Clock</h5>
-                            <a onClick={DownloadLinks} id="projectStopClock" className="btn-for-projects">Git Deploy</a>
+                            <a href='/' onClick={DownloadLinks} id="projectStopClock" className="btn-for-projects">Git Deploy</a>
                         </div>
                     </div>
                     <div className="card border-light mb-3 mb-sm-0">
                         <img src={onlineCodeEdtior} className="card-img-top" alt="ProjectImage" />
                         <div className="card-body d-flex justify-content-start align-items-start flex-column">
                             <h5 className="card-title fw-bold pb-2">Online Code Edtior</h5>
-                            <a onClick={DownloadLinks} id="projectOnlineCodeEdtior" className="btn-for-projects">Git Deploy</a>
+                            <a href='/' onClick={DownloadLinks} id="projectOnlineCodeEdtior" className="btn-for-projects">Git Deploy</a>
                         </div>
                     </div>
                 </div>
