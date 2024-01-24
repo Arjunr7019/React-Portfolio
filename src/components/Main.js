@@ -262,7 +262,7 @@ export default function Main() {
                 <h1 className='fw-bold mb-4'>Contact Us</h1>
                 <div
                     className='width-100 cardBorder  d-flex justify-content-between align-items-center flex-sm-row flex-column rounded-3 p-4'>
-                    <form className='width-50 mx-2'>
+                    <form className='width-100 mx-2'>
                         <div className="mb-3">
                             <label htmlFor="InputName" className="form-label fw-bold">Name</label>
                             <input type="name" className="form-control" id="InputName" />
