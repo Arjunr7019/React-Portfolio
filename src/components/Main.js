@@ -43,7 +43,7 @@ export default function Main() {
         e.preventDefault();
         // console.log(e.currentTarget.id);
         if (e.currentTarget.id === 'resumeBtn') {
-            window.location.href = 'https://drive.google.com/file/d/1nNLnxm2NNhoyu0BNQhZHcrhs8Hku8mua/view?usp=drive_link';
+            window.location.href = 'https://drive.google.com/file/d/1yR99ER-e1ywyXIpDiG23TgO50ly42KjJ/view?usp=drive_link';
         }
         else if (e.currentTarget.id === 'projectWeather') {
             window.location.href = 'https://arjunr7019.github.io/WeatherForecast/';
