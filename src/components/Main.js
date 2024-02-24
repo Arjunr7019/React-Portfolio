@@ -5,11 +5,11 @@ import TablenomsSite from './img/TablenomsSite.png';
 import StopClock from './img/StopClock.png';
 import onlineCodeEdtior from './img/onlineCodeEdtior.png';
 import InstagramReelPostDownloader from './img/InstagramReelPostDownloader.png';
-import Qualification from './img/Qualification.png';
 import linkedin from './img/linkedin_logo_icon.png';
 import instagram from './img/instagram_logo_icon.png';
 import twitter from './img/twitter_logo_icon.png';
 import { Link } from 'react-scroll';
+import Qualification from './Qualification/Qualification';
 
 export default function Main() {
 
@@ -253,12 +253,7 @@ export default function Main() {
             {/* --------------------------About End-------------------------------- */}
 
             {/* -----------------------------Qualification Start------------------------- */}
-            <div id="spyQualification" className='default-margin-x-y d-flex justify-content-center align-items-center flex-column'>
-                <h1 className='fw-bold mb-4'>Qualification</h1>
-                <div className='cardBorder rounded-3 d-flex justify-content-center'>
-                    <img id='QualificationImg' src={Qualification} alt="Qualification" />
-                </div>
-            </div>
+            <Qualification></Qualification>
             {/* -----------------------------Qualification End------------------------- */}
 
             {/* -----------------------------Skills Start------------------------- */}

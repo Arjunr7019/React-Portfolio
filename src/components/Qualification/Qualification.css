@@ -1,0 +1,78 @@
+.qualificationVerticalBar{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    padding: 0 5px;
+}
+.qualificationVerticalBar span:nth-child(1){
+    height: 80%;
+    display: inline-block;
+    width: 2px;
+    background-color: #9c9c9c;
+}
+.qualificationVerticalBar span:nth-child(2){
+    width: 12px;
+    height: 12px;
+    background-color: #9c9c9c;
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    z-index: 1;
+}
+.qualificationVerticalBar span:nth-child(3){
+    width: 12px;
+    height: 12px;
+    background-color: #9c9c9c;
+    border-radius: 50%;
+    position: absolute;
+    top: 35.33%;
+    left: 0;
+    z-index: 1;
+}
+.qualificationVerticalBar span:nth-child(4){
+    width: 12px;
+    height: 12px;
+    background-color: #9c9c9c;
+    border-radius: 50%;
+    position: absolute;
+    top: 60.66%;
+    left: 0;
+    z-index: 1;
+}
+.qualificationVerticalBar span:nth-child(5){
+    width: 12px;
+    height: 12px;
+    background-color: #9c9c9c;
+    border-radius: 50%;
+    position: absolute;
+    top: 88%;
+    left: 0;
+    z-index: 1;
+}
+.qualificationContent{
+    width: 100%;
+}
+.fontSize{
+    font-size: 22px;
+}
+@media only screen and (max-width: 768px) {
+    .qualificationVerticalBar{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        height: 100%;
+        padding: 0 5px;
+        left: 16%;
+    }
+    .fontSize{
+        font-size: 16px;
+    }
+    .fontSizeParagraph{
+        font-size: 14px;
+    }
+    .iconSize{
+        font-size: 20px;
+    }
+  }
