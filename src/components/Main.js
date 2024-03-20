@@ -5,11 +5,9 @@ import TablenomsSite from './img/TablenomsSite.png';
 import StopClock from './img/StopClock.png';
 import onlineCodeEdtior from './img/onlineCodeEdtior.png';
 import InstagramReelPostDownloader from './img/InstagramReelPostDownloader.png';
-import linkedin from './img/linkedin_logo_icon.png';
-import instagram from './img/instagram_logo_icon.png';
-import twitter from './img/twitter_logo_icon.png';
 import { Link } from 'react-scroll';
 import Qualification from './Qualification/Qualification';
+import ContactForm from './ContactForm/ContactForm';
 
 export default function Main() {
 
@@ -293,52 +291,7 @@ export default function Main() {
             {/* -----------------------------Skills End------------------------- */}
 
             {/* -----------------------------Contact Us Start------------------------- */}
-            <div id="spyContact" className='default-margin-x-y d-flex justify-content-center align-items-center flex-column'>
-                <h1 className='fw-bold mb-4'>Contact Us</h1>
-                <div
-                    className='width-100 cardBorder  d-flex justify-content-between align-items-center flex-sm-row flex-column rounded-3 p-4'>
-                    <form className='width-100 mx-2'>
-                        <div className="mb-3">
-                            <label htmlFor="InputName" className="form-label fw-bold">Name</label>
-                            <input type="name" className="form-control" id="InputName" />
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="exampleInputEmail1" className="form-label fw-bold">Email address</label>
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="exampleFormControlTextarea1" className="form-label fw-bold">Message</label>
-                            <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
-                        <button type="submit" className="btn-for-projects">Submit</button>
-                    </form>
-                    <div id='forHeight'
-                        className='width-50 d-flex justify-content-sm-start justify-content-end align-items-center flex-column mx-2'>
-                        <h3>Contact Info</h3>
-                        <div
-                            className='width-100 default-border contactInfo d-felx justify-content-center align-items-center flex-column p-4 rounded-3'>
-                            <h5 className='text-center'>Arjun R</h5>
-                            <li className='pb-2 text-center'>
-                                <a href="/">rarjun7019@gmail.com</a>
-                            </li>
-                            <li className='pb-2 text-center'>
-                                <a href="/">+91 7019629505</a>
-                            </li>
-                        </div>
-                        <div className='width-100 d-flex justify-content-around align-items-center flex-row p-4'>
-                            <div onClick={DownloadLinks} id="LinkedIn" className='links-contact default-border rounded-3 p-2'>
-                                <img src={linkedin} alt="LinkedIn" />
-                            </div>
-                            <div onClick={DownloadLinks} id="Instagram" className='links-contact default-border rounded-3 p-2'>
-                                <img src={instagram} alt="Instagram" />
-                            </div>
-                            <div onClick={DownloadLinks} id="twitter" className='links-contact default-border rounded-3 p-2'>
-                                <img src={twitter} alt="twitter" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <ContactForm></ContactForm>
             {/* -----------------------------Contact Us End------------------------- */}
 
             {/* <!-- -----------------------------footer start---------------------------------- --> */}
