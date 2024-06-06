@@ -41,7 +41,7 @@ export default function Main() {
         e.preventDefault();
         // console.log(e.currentTarget.id);
         if (e.currentTarget.id === 'resumeBtn') {
-            window.location.href = 'https://drive.google.com/file/d/1yR99ER-e1ywyXIpDiG23TgO50ly42KjJ/view?usp=drive_link';
+            window.location.href = 'https://drive.google.com/file/d/1_cqqWT2qTwpaG2j5fE-aF3ycv07PskJn/view?usp=drive_link';
         }
         else if (e.currentTarget.id === 'projectWeather') {
             window.location.href = 'https://arjunr7019.github.io/WeatherForecast/';
@@ -192,10 +192,11 @@ export default function Main() {
                     </span>
                     <p className='width-of-main-location m-0 p-0'>Bangalore,IN</p>
                 </div>
-                <p className='width-of-main-location mt-sm-5 mt-3 px-sm-0 px-5'>I completed my Bachelor of Science in University of
-                    Mysore
-                    ,<br />I have experience in HTML , CSS, JavaScript and C programing. I have experience in React JS Framework
-                    using Node JS.</p>
+                <p className='width-of-main-location mt-sm-5 mt-3 px-sm-0 px-5'>
+                    I hold a Bachelor of Science degree from the University of Mysore and am currently pursuing a Master of Computer Applications (MCA).<br></br>
+                    I have hands-on experience in web development technologies, including HTML, CSS, and JavaScript. <br></br>
+                    Additionally, I am proficient in C programming. I have also gained experience with the React JS, utilizing Node.js for server-side development.
+                </p>
                 <div className='download-button d-flex justify-content-center align-items-center flex-row mt-4'>
                     <span className="material-symbols-outlined">
                         download

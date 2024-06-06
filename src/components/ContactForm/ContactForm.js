@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./../../App.css";
-import linkedin from './../img/instagram_logo_icon.png';
+import linkedin from './../img/linkedin_logo_icon.png';
 import instagram from './../img/instagram_logo_icon.png';
 import twitter from './../img/twitter_logo_icon.png';
 import { Toaster, toast } from 'sonner';
