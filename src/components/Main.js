@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { Toaster, toast } from 'sonner';
 import profileImage2 from './img/profile-image2.png';
 import WeatherForecast from './img/WeatherForecast.png';
 import TablenomsSite from './img/TablenomsSite.png';
@@ -12,6 +13,22 @@ import ContactForm from './ContactForm/ContactForm';
 export default function Main() {
 
     const [count, setCount] = useState("nav-item-change rounded-5");
+
+    useEffect(() => {
+        fetchData();
+      },[]);
+    
+      const fetchData = async ()=> {
+        const response = await fetch('https://portfolio-server-ngoy.onrender.com/api');
+    
+        if (response.status === 200) {
+          // The user is authenticated.
+          toast.success('server started successfully.');
+        } else {
+          // The user is not authenticated.
+        }
+      }
+    
 
     const navChange = (e) => {
         if (e.currentTarget.id === 'about') {
@@ -311,6 +328,7 @@ export default function Main() {
                     </span>
                 </a>
             </div>
+            <Toaster position="bottom-right" />
         </>
     )
 }
