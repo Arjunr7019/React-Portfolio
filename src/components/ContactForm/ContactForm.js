@@ -84,7 +84,7 @@ export default function ContactForm() {
                                 <a href="/">+91 7019629505</a>
                             </li>
                         </div>
-                        <div className='width-100 d-flex justify-content-around align-items-center flex-row p-4'>
+                        <div className='width-100 d-flex justify-content-around align-items-center flex-row py-4'>
                             <div onClick={links} id="LinkedIn" className='links-contact default-border rounded-3 p-2'>
                                 <img src={linkedin} alt="LinkedIn" />
                             </div>

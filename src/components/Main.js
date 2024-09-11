@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import './../App.css';
 import { Toaster, toast } from 'sonner';
 import profileImage2 from './img/profile-image2.png';
-import WeatherForecast from './img/WeatherForecast.png';
-import TablenomsSite from './img/TablenomsSite.png';
-import StopClock from './img/StopClock.png';
-import onlineCodeEdtior from './img/onlineCodeEdtior.png';
-import InstagramReelPostDownloader from './img/InstagramReelPostDownloader.png';
 import { Link } from 'react-scroll';
 import Qualification from './Qualification/Qualification';
 import ContactForm from './ContactForm/ContactForm';
+import About from './About/About';
+import Skills from './Skills/Skills';
+import Projects from './Projects/Projects';
 
 export default function Main() {
 
@@ -16,19 +15,19 @@ export default function Main() {
 
     useEffect(() => {
         fetchData();
-      },[]);
-    
-      const fetchData = async ()=> {
+    }, []);
+
+    const fetchData = async () => {
         const response = await fetch('https://portfolio-server-ngoy.onrender.com/api');
-    
+
         if (response.status === 200) {
-          // The user is authenticated.
-          toast.success('server started successfully.');
+            // The user is authenticated.
+            toast.success('server started successfully.');
         } else {
-          // The user is not authenticated.
+            // The user is not authenticated.
         }
-      }
-    
+    }
+
 
     const navChange = (e) => {
         if (e.currentTarget.id === 'about') {
@@ -54,37 +53,6 @@ export default function Main() {
         navMenuChangeForSm();
     }
 
-    const DownloadLinks = (e) => {
-        e.preventDefault();
-        // console.log(e.currentTarget.id);
-        if (e.currentTarget.id === 'resumeBtn') {
-            window.location.href = 'https://drive.google.com/file/d/1_cqqWT2qTwpaG2j5fE-aF3ycv07PskJn/view?usp=drive_link';
-        }
-        else if (e.currentTarget.id === 'projectWeather') {
-            window.location.href = 'https://arjunr7019.github.io/WeatherForecast/';
-        }
-        else if (e.currentTarget.id === 'projectTablenoms') {
-            window.location.href = 'https://tablenoms.com/';
-        }
-        else if (e.currentTarget.id === 'projectStopClock') {
-            window.location.href = 'https://arjunr7019.github.io/StopClock/';
-        }
-        else if (e.currentTarget.id === 'projectOnlineCodeEdtior') {
-            window.location.href = 'https://arjunr7019.github.io/online-code-editor/';
-        }
-        else if (e.currentTarget.id === 'projectInstagram') {
-            window.location.href = 'https://arjunr7019.github.io/insta-download/';
-        }
-        else if (e.currentTarget.id === 'LinkedIn') {
-            window.location.href = 'https://www.linkedin.com/in/arjun-r-634413236/';
-        }
-        else if (e.currentTarget.id === 'Instagram') {
-            window.location.href = 'https://www.instagram.com/rgowdaarjun/';
-        }
-        else if (e.currentTarget.id === 'twitter') {
-            window.location.href = 'https://twitter.com/ArjunRGowda6';
-        }
-    }
 
     const navMenuChangeForSm = () => {
         if (document.getElementById("nav-drop-for-sm").classList.contains('actineNav')) {
@@ -198,119 +166,12 @@ export default function Main() {
                 </div>
             </div>
             {/* <!-- ---------------------------------Header Ends----------------------------------- --> */}
-
-            {/* --------------------------About Start-------------------------------- */}
-            <div id="spyAbout"
-                className='width-of-main-100 d-flex justify-content-center align-items-center flex-column pb-5 pb-sm-0'>
-                <p className='width-of-main-name mt-5 mb-0 p-0'>Hi,I'm Arjun R</p>
-                <div className='width-of-main-100 d-flex justify-content-center align-items-center flex-row mt-sm-4 mt-3'>
-                    <span className="material-symbols-outlined">
-                        location_on
-                    </span>
-                    <p className='width-of-main-location m-0 p-0'>Bangalore,IN</p>
-                </div>
-                <p className='width-of-main-location mt-sm-5 mt-3 px-sm-0 px-5'>
-                    I hold a Bachelor of Science degree from the University of Mysore and am currently pursuing a Master of Computer Applications (MCA).<br></br>
-                    I have hands-on experience in web development technologies, including HTML, CSS, and JavaScript. <br></br>
-                    Additionally, I am proficient in C programming. I have also gained experience with the React JS, utilizing Node.js for server-side development.
-                </p>
-                <div className='download-button d-flex justify-content-center align-items-center flex-row mt-4'>
-                    <span className="material-symbols-outlined">
-                        download
-                    </span>
-                    <button onClick={DownloadLinks} id='resumeBtn'>Download Resume</button>
-                </div>
-            </div>
-            {/* --------------------------About End-------------------------------- */}
-
-            {/* --------------------------Projects Start-------------------------------- */}
-            <div id="spyProjects" className='default-margin-x-y d-flex justify-content-center align-items-center flex-column'>
-                <h1 className='fw-bold mb-4'>Projects</h1>
-                <div className='width-100 d-flex justify-content-around align-items-center flex-sm-row flex-column mb-lg-4'>
-                    <div className="card border-light mb-3 mb-sm-0">
-                        <img src={WeatherForecast} className="card-img-top" alt="ProjectImage" />
-                        <div className="card-body d-flex justify-content-start align-items-start flex-column">
-                            <h5 className="card-title fw-bold pb-2">Weather Forecast</h5>
-                            <a href='/' onClick={DownloadLinks} id="projectWeather" className="btn-for-projects">Git Deploy</a>
-                        </div>
-                    </div>
-                    <div className="card border-light mb-3 mb-sm-0">
-                        <img src={TablenomsSite} className="card-img-top" alt="ProjectImage" />
-                        <div className="card-body d-flex justify-content-start align-items-start flex-column">
-                            <h5 className="card-title fw-bold pb-2">Tablenoms Site</h5>
-                            <a href='/' onClick={DownloadLinks} id="projectTablenoms" className="btn-for-projects">Git Deploy</a>
-                        </div>
-                    </div>
-                    <div className="card border-light mb-3 mb-sm-0">
-                        <img src={StopClock} className="card-img-top" alt="ProjectImage" />
-                        <div className="card-body d-flex justify-content-start align-items-start flex-column">
-                            <h5 className="card-title fw-bold pb-2">Stop Clock</h5>
-                            <a href='/' onClick={DownloadLinks} id="projectStopClock" className="btn-for-projects">Git Deploy</a>
-                        </div>
-                    </div>
-                    <div className="card border-light mb-3 mb-sm-0">
-                        <img src={onlineCodeEdtior} className="card-img-top" alt="ProjectImage" />
-                        <div className="card-body d-flex justify-content-start align-items-start flex-column">
-                            <h5 className="card-title fw-bold pb-2">Online Code Edtior</h5>
-                            <a href='/' onClick={DownloadLinks} id="projectOnlineCodeEdtior" className="btn-for-projects">Git Deploy</a>
-                        </div>
-                    </div>
-                </div>
-                <div className='width-100 d-flex justify-content-around align-items-center flex-sm-row flex-column'>
-                    <div className="card border-light mb-3 mb-sm-0">
-                        <img src={InstagramReelPostDownloader} className="card-img-top" alt="ProjectImage" />
-                        <div className="card-body d-flex justify-content-start align-items-start flex-column">
-                            <h5 className="card-title fw-bold pb-2">Instagram Reel & Post Downloader</h5>
-                            <a href='/' onClick={DownloadLinks} id="projectInstagram" className="btn-for-projects">Git Deploy</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* --------------------------About End-------------------------------- */}
-
-            {/* -----------------------------Qualification Start------------------------- */}
+            
+            <About></About>
+            <Projects></Projects>
             <Qualification></Qualification>
-            {/* -----------------------------Qualification End------------------------- */}
-
-            {/* -----------------------------Skills Start------------------------- */}
-            <div id="spySkills" className='default-margin-x-y d-flex justify-content-center align-items-center flex-column'>
-                <h1 className='fw-bold mb-4'>Skills</h1>
-                <div className='width-100 cardBorder rounded-3 p-sm-5 p-4'>
-                    <div className='pb-3'>
-                        <h3>JavaScript</h3>
-                        <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow="90" aria-valuemin="0"
-                            aria-valuemax="100">
-                            <div className="progress-bar width-90"></div>
-                        </div>
-                    </div>
-                    <div className='pb-3'>
-                        <h3>React JS</h3>
-                        <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0"
-                            aria-valuemax="100">
-                            <div className="progress-bar width-70"></div>
-                        </div>
-                    </div>
-                    <div className='pb-3'>
-                        <h3>CSS</h3>
-                        <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0"
-                            aria-valuemax="100">
-                            <div className="progress-bar width-90"></div>
-                        </div>
-                    </div>
-                    <div className='pb-3'>
-                        <h3>HTML</h3>
-                        <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0"
-                            aria-valuemax="100">
-                            <div className="progress-bar width-90"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* -----------------------------Skills End------------------------- */}
-
-            {/* -----------------------------Contact Us Start------------------------- */}
+            <Skills></Skills>
             <ContactForm></ContactForm>
-            {/* -----------------------------Contact Us End------------------------- */}
 
             {/* <!-- -----------------------------footer start---------------------------------- --> */}
             <footer>
