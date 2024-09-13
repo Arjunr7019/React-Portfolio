@@ -13,9 +13,37 @@ export default function Main() {
 
     const [count, setCount] = useState("nav-item-change rounded-5");
 
+    const [ip, setIp] = useState({});
+
     useEffect(() => {
         fetchData();
+        getUserIP();
     }, []);
+
+    const getUserIP = async () => {
+        const response = await fetch('https://ipapi.co/json');
+
+        // console.log(response)
+        if (response.status === 200) {
+            // The user is authenticated.
+            const data = await response.json();
+            setIp({
+                "Ip": data.ip,
+                "version": data.version,
+                "asn": data.asn,
+                "city": data.city,
+                "country": data.country_name,
+                "latitude": data.latitude,
+                "longitude": data.longitude,
+                "network": data.network,
+                "org": data.org,
+                "region": data.region,
+            });
+            // console.log(ip);
+        } else {
+            // The user is not authenticated.
+        }
+    }
 
     const fetchData = async () => {
         const response = await fetch('https://portfolio-server-ngoy.onrender.com/api');
@@ -23,6 +51,24 @@ export default function Main() {
         if (response.status === 200) {
             // The user is authenticated.
             toast.success('server started successfully.');
+
+            const UserIp = ip;
+            const response = await fetch('https://portfolio-server-ngoy.onrender.com/api/userIp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    UserIp
+                })
+            });
+
+            if (response.status === 200) {
+                // The user is authenticated.
+                toast.success('😊');
+            } else {
+                // The user is not authenticated.
+            }
         } else {
             // The user is not authenticated.
         }
@@ -166,7 +212,7 @@ export default function Main() {
                 </div>
             </div>
             {/* <!-- ---------------------------------Header Ends----------------------------------- --> */}
-            
+
             <About></About>
             <Projects></Projects>
             <Qualification></Qualification>
