@@ -39,7 +39,7 @@ export default function Main() {
                 "org": data.org,
                 "region": data.region,
             });
-            // console.log(ip);
+            console.log(ip);
         } else {
             // The user is not authenticated.
         }

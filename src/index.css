@@ -139,6 +139,7 @@
 }
 
 .navItemsForSm {
+    display: none;
     opacity: 0;
     position: absolute;
     top: 70px;
@@ -363,6 +364,19 @@ html footer a {
 
     #forHeight {
         width: 100% !important;
+    }
+
+    .navItemsForSm {
+        display: auto;
+        opacity: 0;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(255, 255, 255, 0.47);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        transition: .4s ease-in-out;
     }
 
     .width-of-main-100 {
