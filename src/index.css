@@ -282,7 +282,7 @@
 }
 
 #forHeight {
-    height: 348px;
+    height: fit-content;
 }
 
 /* -----------------------common for Header and main-------------------- */

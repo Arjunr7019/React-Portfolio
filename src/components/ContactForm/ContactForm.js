@@ -55,7 +55,7 @@ export default function ContactForm() {
       <div id="spyContact" className='default-margin-x-y d-flex justify-content-center align-items-center flex-column'>
                 <h1 className='fw-bold mb-4'>Contact Us</h1>
                 <div
-                    className='width-100 cardBorder  d-flex justify-content-between align-items-center flex-sm-row flex-column rounded-3 p-4'>
+                    className='width-100 cardBorder  d-flex justify-content-between align-items-start flex-sm-row flex-column rounded-3 p-4'>
                     <form className='width-100 mx-2'>
                         <div className="mb-3">
                             <label htmlFor="InputName" className="form-label fw-bold">Name</label>
@@ -84,14 +84,14 @@ export default function ContactForm() {
                                 <a href="/">+91 7019629505</a>
                             </li>
                         </div>
-                        <div className='width-100 d-flex justify-content-around align-items-center flex-row py-4'>
-                            <div onClick={links} id="LinkedIn" className='links-contact default-border rounded-3 p-2'>
+                        <div className='width-100 d-flex justify-content-around align-items-center flex-row flex-wrap py-4'>
+                            <div onClick={links} id="LinkedIn" className='links-contact default-border rounded-3 p-2 mt-sm-2 mt-0'>
                                 <img src={linkedin} alt="LinkedIn" />
                             </div>
-                            <div onClick={links} id="Instagram" className='links-contact default-border rounded-3 p-2'>
+                            <div onClick={links} id="Instagram" className='links-contact default-border rounded-3 p-2 mt-sm-2 mt-0'>
                                 <img src={instagram} alt="Instagram" />
                             </div>
-                            <div onClick={links} id="twitter" className='links-contact default-border rounded-3 p-2'>
+                            <div onClick={links} id="twitter" className='links-contact default-border rounded-3 p-2 mt-sm-2 mt-0'>
                                 <img src={twitter} alt="twitter" />
                             </div>
                         </div>
