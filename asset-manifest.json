@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React-Portfolio/static/css/main.37518e30.css",
-    "main.js": "/React-Portfolio/static/js/main.fdeb0a99.js",
+    "main.css": "/React-Portfolio/static/css/main.a1773682.css",
+    "main.js": "/React-Portfolio/static/js/main.ef56820e.js",
     "static/js/787.a2cb61a6.chunk.js": "/React-Portfolio/static/js/787.a2cb61a6.chunk.js",
     "static/media/InstagramReelPostDownloader.png": "/React-Portfolio/static/media/InstagramReelPostDownloader.63b5eb1c51fbb4087116.png",
     "static/media/profile-image2.png": "/React-Portfolio/static/media/profile-image2.f14a1eecc32303b871a2.png",
@@ -13,12 +13,12 @@
     "static/media/linkedin_logo_icon.png": "/React-Portfolio/static/media/linkedin_logo_icon.90c18940237ddcb3b925.png",
     "static/media/StopClock.png": "/React-Portfolio/static/media/StopClock.072311ed16c902b7e052.png",
     "index.html": "/React-Portfolio/index.html",
-    "main.37518e30.css.map": "/React-Portfolio/static/css/main.37518e30.css.map",
-    "main.fdeb0a99.js.map": "/React-Portfolio/static/js/main.fdeb0a99.js.map",
+    "main.a1773682.css.map": "/React-Portfolio/static/css/main.a1773682.css.map",
+    "main.ef56820e.js.map": "/React-Portfolio/static/js/main.ef56820e.js.map",
     "787.a2cb61a6.chunk.js.map": "/React-Portfolio/static/js/787.a2cb61a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.37518e30.css",
-    "static/js/main.fdeb0a99.js"
+    "static/css/main.a1773682.css",
+    "static/js/main.ef56820e.js"
   ]
 }
