@@ -367,7 +367,7 @@ html footer a {
     }
 
     .navItemsForSm {
-        display: auto;
+        /* display: flex; */
         opacity: 0;
         position: absolute;
         top: 70px;

@@ -105,6 +105,9 @@ export default function Main() {
             document.getElementById('span2').style.top = "0%";
             document.getElementById('span3').style.width = "50%";
             document.getElementById('smNavItems').style.opacity = "0";
+            setTimeout(()=>{
+                document.getElementById('smNavItems').style.display = "none";
+            },500)
             document.getElementById("nav-drop-for-sm").classList.remove("actineNav");
         }
         else {
@@ -113,7 +116,10 @@ export default function Main() {
             document.getElementById('span2').style.transform = "rotate(45deg)";
             document.getElementById('span2').style.top = "-4%";
             document.getElementById('span3').style.width = "0";
-            document.getElementById('smNavItems').style.opacity = "100%";
+            document.getElementById('smNavItems').style.display = "unset";
+            setTimeout(()=>{
+                document.getElementById('smNavItems').style.opacity = "100%";
+            },100)
             document.getElementById("nav-drop-for-sm").classList.add("actineNav");
         }
     }
