@@ -21,7 +21,7 @@ export default function About() {
                 <span className="material-symbols-outlined">
                     download
                 </span>
-                <button onClick={()=> window.location.href = 'https://drive.google.com/file/d/1_cqqWT2qTwpaG2j5fE-aF3ycv07PskJn/view?usp=drive_link'} id='resumeBtn'>Download Resume</button>
+                <button onClick={()=> window.location.href = 'https://drive.google.com/file/d/1R0bNhr7bRfT6_IcBbKr8k2hxo61FA77v/view?usp=sharing'} id='resumeBtn'>Download Resume</button>
             </div>
         </div>
     )

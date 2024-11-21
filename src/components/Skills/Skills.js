@@ -21,6 +21,34 @@ export default function Skills() {
                     </div>
                 </div>
                 <div className='pb-3'>
+                    <h3>Node JS</h3>
+                    <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0"
+                        aria-valuemax="100">
+                        <div className="progress-bar width-70"></div>
+                    </div>
+                </div>
+                <div className='pb-3'>
+                    <h3>Bootstrap</h3>
+                    <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0"
+                        aria-valuemax="100">
+                        <div className="progress-bar width-90"></div>
+                    </div>
+                </div>
+                <div className='pb-3'>
+                    <h3>Git & GitHub</h3>
+                    <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0"
+                        aria-valuemax="100">
+                        <div style={{width:"60%"}} className="progress-bar width-60"></div>
+                    </div>
+                </div>
+                <div className='pb-3'>
+                    <h3>C</h3>
+                    <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0"
+                        aria-valuemax="100">
+                        <div style={{width:"60%"}} className="progress-bar width-60"></div>
+                    </div>
+                </div>
+                <div className='pb-3'>
                     <h3>CSS</h3>
                     <div className="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0"
                         aria-valuemax="100">
