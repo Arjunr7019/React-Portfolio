@@ -1,10 +1,12 @@
 {
   "files": {
     "main.css": "/React-Portfolio/static/css/main.57a5c6e4.css",
-    "main.js": "/React-Portfolio/static/js/main.80ca8d99.js",
+    "main.js": "/React-Portfolio/static/js/main.45dec1bd.js",
     "static/js/787.a2cb61a6.chunk.js": "/React-Portfolio/static/js/787.a2cb61a6.chunk.js",
+    "static/media/musicApp-Alpha-v1.3.apk": "/React-Portfolio/static/media/musicApp-Alpha-v1.3.9d4e817ee67ed7ca0f16.apk",
     "static/media/InstagramReelPostDownloader.png": "/React-Portfolio/static/media/InstagramReelPostDownloader.63b5eb1c51fbb4087116.png",
     "static/media/profile-image2.png": "/React-Portfolio/static/media/profile-image2.f14a1eecc32303b871a2.png",
+    "static/media/projectMusicApp.jpg": "/React-Portfolio/static/media/projectMusicApp.780f2c673df2c960819b.jpg",
     "static/media/WeatherForecast.png": "/React-Portfolio/static/media/WeatherForecast.ab6cc631fffa0a2c0749.png",
     "static/media/onlineCodeEdtior.png": "/React-Portfolio/static/media/onlineCodeEdtior.f24374ba4682a689c73e.png",
     "static/media/TablenomsSite.png": "/React-Portfolio/static/media/TablenomsSite.d860de1176efeb41bfaf.png",
@@ -14,11 +16,11 @@
     "static/media/StopClock.png": "/React-Portfolio/static/media/StopClock.072311ed16c902b7e052.png",
     "index.html": "/React-Portfolio/index.html",
     "main.57a5c6e4.css.map": "/React-Portfolio/static/css/main.57a5c6e4.css.map",
-    "main.80ca8d99.js.map": "/React-Portfolio/static/js/main.80ca8d99.js.map",
+    "main.45dec1bd.js.map": "/React-Portfolio/static/js/main.45dec1bd.js.map",
     "787.a2cb61a6.chunk.js.map": "/React-Portfolio/static/js/787.a2cb61a6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.57a5c6e4.css",
-    "static/js/main.80ca8d99.js"
+    "static/js/main.45dec1bd.js"
   ]
 }
