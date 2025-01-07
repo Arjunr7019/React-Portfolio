@@ -1,17 +1,19 @@
-.qualificationVerticalBar{
+.qualificationVerticalBar {
     display: flex;
     align-items: center;
     position: absolute;
     height: 100%;
     padding: 0 5px;
 }
-.qualificationVerticalBar span:nth-child(1){
+
+.qualificationVerticalBar span:nth-child(1) {
     height: 80%;
     display: inline-block;
     width: 2px;
     background-color: #9c9c9c;
 }
-.qualificationVerticalBar span:nth-child(2){
+
+.qualificationVerticalBar span:nth-child(2) {
     width: 12px;
     height: 12px;
     background-color: #9c9c9c;
@@ -21,7 +23,8 @@
     left: 0;
     z-index: 1;
 }
-.qualificationVerticalBar span:nth-child(3){
+
+.qualificationVerticalBar span:nth-child(3) {
     width: 12px;
     height: 12px;
     background-color: #9c9c9c;
@@ -31,7 +34,8 @@
     left: 0;
     z-index: 1;
 }
-.qualificationVerticalBar span:nth-child(4){
+
+.qualificationVerticalBar span:nth-child(4) {
     width: 12px;
     height: 12px;
     background-color: #9c9c9c;
@@ -41,7 +45,8 @@
     left: 0;
     z-index: 1;
 }
-.qualificationVerticalBar span:nth-child(5){
+
+.qualificationVerticalBar span:nth-child(5) {
     width: 12px;
     height: 12px;
     background-color: #9c9c9c;
@@ -51,14 +56,46 @@
     left: 0;
     z-index: 1;
 }
-.qualificationContent{
+
+.qualificationContent {
     width: 100%;
 }
-.fontSize{
+
+.fontSize {
     font-size: 22px;
 }
+
+@keyframes dotAnimation {
+    0% {
+        filter: drop-shadow(0px 0px 2px #000000);
+    }
+
+    100% {
+        filter: drop-shadow(0px 0px 20px #000000);
+    }
+
+    /* 100% {
+        filter: drop-shadow(0px 0px 20px #414141);
+    } */
+}
+
+.qualificationVerticalBar span:nth-child(2) {
+    width: 12px;
+    height: 12px;
+    background-color: #9c9c9c;
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    z-index: 1;
+    animation-name: dotAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    /* animation-direction: alternate-reverse; */
+}
+
 @media only screen and (max-width: 768px) {
-    .qualificationVerticalBar{
+    .qualificationVerticalBar {
         display: flex;
         align-items: center;
         position: absolute;
@@ -66,13 +103,16 @@
         padding: 0 5px;
         left: 16%;
     }
-    .fontSize{
+
+    .fontSize {
         font-size: 16px;
     }
-    .fontSizeParagraph{
+
+    .fontSizeParagraph {
         font-size: 14px;
     }
-    .iconSize{
+
+    .iconSize {
         font-size: 20px;
     }
-  }
+}
