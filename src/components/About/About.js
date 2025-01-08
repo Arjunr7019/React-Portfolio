@@ -13,9 +13,11 @@ export default function About() {
                 <p className='width-of-main-location m-0 p-0'>Bangalore,IN</p>
             </div>
             <p className='width-of-main-location mt-sm-5 mt-3 px-sm-0 px-5'>
-                I hold a Bachelor of Science degree from the University of Mysore and am currently pursuing a Master of Computer Applications (MCA).<br></br>
-                I have hands-on experience in web development technologies, including HTML, CSS, and JavaScript. <br></br>
-                Additionally, I am proficient in C programming. I have also gained experience with the React JS, utilizing Node.js for server-side development.
+            I am a highly motivated software developer with a Master of Computer Applications (MCA) and a Bachelor of Science degree from the University of Mysore. <br/>
+             With a strong foundation in programming and web development, I specialize in crafting dynamic and user-friendly web applications.<br/>
+              My expertise includes HTML, CSS, JavaScript, and React JS for front-end development, while leveraging Node.js for efficient server-side solutions. <br/>
+               Additionally, I have a solid understanding of C programming, which enhances my problem-solving and algorithmic skills. <br/>
+                I am passionate about continuous learning and applying innovative technologies to deliver impactful solutions
             </p>
             <div className='download-button d-flex justify-content-center align-items-center flex-row mt-4'>
                 <span className="material-symbols-outlined">
