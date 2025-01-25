@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './../App.css';
 import { Toaster, toast } from 'sonner';
 import profileImage2 from './img/profile-image2.png';
@@ -10,84 +10,80 @@ import Skills from './Skills/Skills';
 import Projects from './Projects/Projects';
 
 export default function Main() {
-
-    const [count, setCount] = useState("nav-item-change rounded-5");
+    const [navClass, setNavClass] = useState("nav-item-change rounded-5");
+    const containerRef = useRef(null);
+    // const [navButton, setNavButton] = useState(false);
 
     useEffect(() => {
         fetchData();
     }, []);
 
-    // const getUserIP = async () => {
-    //     const response = await fetch('https://ipapi.co/json');
-
-    //     // console.log(response)
-    //     if (response.status === 200) {
-    //         // The user is authenticated.
-    //         const data = await response.json();
-    //         setIp({
-    //             "Ip": data.ip,
-    //             "version": data.version,
-    //             "asn": data.asn,
-    //             "city": data.city,
-    //             "country": data.country_name,
-    //             "latitude": data.latitude,
-    //             "longitude": data.longitude,
-    //             "network": data.network,
-    //             "org": data.org,
-    //             "region": data.region,
-    //         });
-    //         console.log(ip);
-    //     } else {
-    //         // The user is not authenticated.
-    //     }
-    // }
+    useEffect(() => {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    const updatedInView = {};
+                    const ids = ['spyAbout', 'spyProjects', 'spyQualification', 'spySkills', 'spyContact']
+                    entries.forEach((entry) => {
+                        if (ids.includes(entry.target.id)) {
+                            updatedInView[entry.target.id] = entry.isIntersecting;
+                            // console.log(updatedInView.spyAbout)
+                        }
+                    });
+                    console.log(updatedInView)
+                    if (updatedInView.spyAbout) {
+                        setNavClass("nav-item-change rounded-5");
+                    } else if (updatedInView.spyProjects) {
+                        setNavClass("nav-item-change-project rounded-5");
+                    } else if (updatedInView.spyQualification) {
+                        setNavClass("nav-item-change-qualification rounded-5");
+                    } else if (updatedInView.spySkills) {
+                        setNavClass("nav-item-change-skills rounded-5");
+                    } else if (updatedInView.spyContact) {
+                        setNavClass("nav-item-change-contactUs rounded-5");
+                    }
+                },
+                { threshold: 0.1 } // Adjust threshold as needed
+            );
+    
+            if (containerRef.current) {
+                const elements = containerRef.current.querySelectorAll("[id]");
+                elements.forEach((el) => observer.observe(el));
+            }
+    
+            return () => {
+                observer.disconnect(); // Clean up the observer on unmount
+            };
+    }, [])
 
     const fetchData = async () => {
         const response = await fetch('https://portfolio-server-ngoy.onrender.com/api');
 
         if (response.status === 200) {
-            // The user is authenticated.
             toast.success('server started successfully.');
-
-            // const UserIp = ip;
-            // const response = await fetch('https://portfolio-server-ngoy.onrender.com/api/userIp', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify({
-            //         UserIp
-            //     })
-            // });
-
-            // if (response.status === 200) {
-            //     // The user is authenticated.
-            //     toast.success('😊');
-            // } else {
-            //     // The user is not authenticated.
-            // }
         } else {
             // The user is not authenticated.
         }
     }
 
-
     const navChange = (e) => {
         if (e.currentTarget.id === 'about') {
-            setCount("nav-item-change rounded-5");
+            setNavClass("nav-item-change rounded-5");
         }
         else if (e.currentTarget.id === 'projects') {
-            setCount("nav-item-change-project rounded-5");
+            setNavClass("nav-item-change-project rounded-5");
         }
         else if (e.currentTarget.id === 'qualification') {
-            setCount("nav-item-change-qualification rounded-5");
+            setNavClass("nav-item-change-qualification rounded-5");
         }
         else if (e.currentTarget.id === 'skills') {
-            setCount("nav-item-change-skills rounded-5");
+            setNavClass("nav-item-change-skills rounded-5");
         }
         else if (e.currentTarget.id === 'contactUs') {
-            setCount("nav-item-change-contactUs rounded-5");
+            setNavClass("nav-item-change-contactUs rounded-5");
         }
+        // setTimeout(()=>{
+        //     setNavButton(false)
+        // },1000)
     };
 
     const onClickVisibilityChange = (e) => {
@@ -105,9 +101,9 @@ export default function Main() {
             document.getElementById('span2').style.top = "0%";
             document.getElementById('span3').style.width = "50%";
             document.getElementById('smNavItems').style.opacity = "0";
-            setTimeout(()=>{
+            setTimeout(() => {
                 document.getElementById('smNavItems').style.display = "none";
-            },500)
+            }, 500)
             document.getElementById("nav-drop-for-sm").classList.remove("actineNav");
         }
         else {
@@ -117,12 +113,14 @@ export default function Main() {
             document.getElementById('span2').style.top = "-4%";
             document.getElementById('span3').style.width = "0";
             document.getElementById('smNavItems').style.display = "unset";
-            setTimeout(()=>{
+            setTimeout(() => {
                 document.getElementById('smNavItems').style.opacity = "100%";
-            },100)
+            }, 100)
             document.getElementById("nav-drop-for-sm").classList.add("actineNav");
         }
     }
+
+    
     return (
         <>
             {/* <!-- ---------------------Header Start------------------------------------ --> */}
@@ -131,9 +129,8 @@ export default function Main() {
                     <img className='profileImage' src={profileImage2} alt='profileImage' />
                 </div>
                 <div className='nav-menu d-sm-flex d-none justify-content-center align-items-center'>
-                    <div className={count}></div>
+                    <div className={navClass}></div>
                     <nav className='nav-main d-flex flex-row'>
-
                         <ul className='nav-content d-flex flex-row justify-content-around p-0 m-0'>
                             <li><Link id='about' className="nav-text active" onClick={navChange}
                                 to="spyAbout"
@@ -145,7 +142,7 @@ export default function Main() {
                                 to="spyProjects"
                                 spy={true}
                                 smooth={true}
-                                offset={-150}
+                                offset={-120}
                                 duration={100}>Projects</Link>
                             </li>
                             <li><Link id='qualification' className="nav-text" onClick={navChange}
@@ -169,7 +166,6 @@ export default function Main() {
                                 duration={100}>Contact</Link>
                             </li>
                         </ul>
-
                     </nav>
                 </div>
                 <div id="nav-drop-for-sm" onClick={navMenuChangeForSm}
@@ -216,11 +212,13 @@ export default function Main() {
             </div>
             {/* <!-- ---------------------------------Header Ends----------------------------------- --> */}
 
-            <About></About>
-            <Projects></Projects>
-            <Qualification></Qualification>
-            <Skills></Skills>
-            <ContactForm></ContactForm>
+            <div ref={containerRef}>
+                <About></About>
+                <Projects></Projects>
+                <Qualification></Qualification>
+                <Skills></Skills>
+                <ContactForm></ContactForm>
+            </div>
 
             {/* <!-- -----------------------------footer start---------------------------------- --> */}
             <footer>
