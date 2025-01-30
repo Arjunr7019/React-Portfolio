@@ -67,7 +67,7 @@ export default function ContactForm() {
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleFormControlTextarea1" className="form-label fw-bold">Message</label>
-                            <textarea className="form-control" value={messageValue} onChange={(e)=> setMessage(e.target.value)} id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea style={{resize:"none"}} className="form-control" value={messageValue} onChange={(e)=> setMessage(e.target.value)} id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                         <button type="submit" onClick={sendForm} className="btn-for-projects">Submit</button>
                     </form>

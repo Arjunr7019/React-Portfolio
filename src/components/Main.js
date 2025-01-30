@@ -29,7 +29,7 @@ export default function Main() {
                             // console.log(updatedInView.spyAbout)
                         }
                     });
-                    console.log(updatedInView)
+                    // console.log(updatedInView)
                     if (updatedInView.spyAbout) {
                         setNavClass("nav-item-change rounded-5");
                     } else if (updatedInView.spyProjects) {
