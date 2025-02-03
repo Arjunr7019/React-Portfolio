@@ -72,7 +72,7 @@ export default function Projects() {
     ]
     return (
         <div id="spyProjects" className='default-margin-x-y d-flex justify-content-center align-items-center flex-column'>
-            <h1 className='fw-bold mb-4'>Projects</h1>
+            <h1 className='fw-bold mb-5'>Projects</h1>
             <div className='width-100 d-flex justify-content-around align-items-start flex-row flex-wrap mb-lg-4'>
                 {projects.map((data) =>
                     <div key={data.id} className="card border-light mb-3">
