@@ -224,7 +224,7 @@ export default function Main() {
             <footer>
                 <div className="width-100 bg-body-tertiary d-flex flex-column justify-content-center align-items-center py-5">
                     <h4>Arjun R</h4>
-                    <a href="/">Copyright © 2023 Arjun R. All rights reserved.</a>
+                    <a href="/">Copyright © 2025 Arjun R. All rights reserved.</a>
                 </div>
             </footer>
             {/* <!-- -----------------------------footer end---------------------------------- --> */}

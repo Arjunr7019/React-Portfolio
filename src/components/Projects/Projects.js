@@ -8,7 +8,6 @@ import InstagramReelPostDownloader from '../img/InstagramReelPostDownloader.png'
 import ProjectMusicApp from '../img/projectMusicApp.jpg';
 import ProjectBloodReport from '../img/bloodReport.png';
 import ProjectToDoList from '../img/toDoList.png';
-import MusicAppFile from '../../Assets/musicApp-Alpha-v1.3.apk'
 
 export default function Projects() {
 
@@ -52,7 +51,7 @@ export default function Projects() {
             name: "MusicApp(React-native)",
             image: ProjectMusicApp,
             id: "projectMusicApp",
-            apkFile: true, apkLink: MusicAppFile,
+            apkFile: true, apkLink: 'https://drive.google.com/file/d/1nUzvHpzc_HdV8gL42M5-_STdDHYoGdu3/view?usp=sharing',
             link: 'https://github.com/Arjunr7019/musicApp'
         },
         {
@@ -80,7 +79,7 @@ export default function Projects() {
                         <div className="card-body d-flex justify-content-start align-items-start flex-column">
                             <h5 className="card-title fw-bold pb-2">{data.name}</h5>
                             <div className='w-100 d-flex justify-content-between'>
-                                <a href='/' onClick={(e)=> { e.preventDefault(); window.location.href=data.link}} id={data.id} className="btn-for-projects">Check Out</a>
+                                <a href='/' onClick={(e)=> { e.preventDefault(); window.location.href=data.link}} id={data.id} className="btn-for-projects">Checkout</a>
                                 {data.apkFile ? <a href='/' onClick={(e)=> { e.preventDefault(); window.location.href=data.apkLink}} id={data.id} className="btn-for-projects">APK File</a> : <></>}
                             </div>
                         </div>

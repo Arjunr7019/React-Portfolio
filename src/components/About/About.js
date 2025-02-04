@@ -49,7 +49,7 @@ export default function About() {
                 <p className='width-of-main-location mt-3 px-sm-0 px-5'>
                     MCA graduate and front-end developer skilled in React.js, JavaScript, and Node.js. <br /> Passionate about building responsive and user-friendly web applications.
                 </p>
-                <div className='download-button d-flex justify-content-center align-items-center flex-row mt-4'>
+                <div id='download-button' className='d-flex justify-content-center align-items-center flex-row mt-4'>
                     <span className="material-symbols-outlined">
                         download
                     </span>
