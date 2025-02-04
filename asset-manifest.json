@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/React-Portfolio/static/css/main.c050ecb4.css",
-    "main.js": "/React-Portfolio/static/js/main.fba3ebac.js",
+    "main.css": "/React-Portfolio/static/css/main.ac2bbfa0.css",
+    "main.js": "/React-Portfolio/static/js/main.4902a54c.js",
     "static/js/787.a2cb61a6.chunk.js": "/React-Portfolio/static/js/787.a2cb61a6.chunk.js",
-    "static/media/musicApp-Alpha-v1.3.apk": "/React-Portfolio/static/media/musicApp-Alpha-v1.3.9d4e817ee67ed7ca0f16.apk",
     "static/media/InstagramReelPostDownloader.png": "/React-Portfolio/static/media/InstagramReelPostDownloader.63b5eb1c51fbb4087116.png",
     "static/media/profile-image2.png": "/React-Portfolio/static/media/profile-image2.f14a1eecc32303b871a2.png",
     "static/media/projectMusicApp.jpg": "/React-Portfolio/static/media/projectMusicApp.780f2c673df2c960819b.jpg",
@@ -17,12 +16,12 @@
     "static/media/linkedin_logo_icon.png": "/React-Portfolio/static/media/linkedin_logo_icon.90c18940237ddcb3b925.png",
     "static/media/StopClock.png": "/React-Portfolio/static/media/StopClock.072311ed16c902b7e052.png",
     "index.html": "/React-Portfolio/index.html",
-    "main.c050ecb4.css.map": "/React-Portfolio/static/css/main.c050ecb4.css.map",
-    "main.fba3ebac.js.map": "/React-Portfolio/static/js/main.fba3ebac.js.map",
+    "main.ac2bbfa0.css.map": "/React-Portfolio/static/css/main.ac2bbfa0.css.map",
+    "main.4902a54c.js.map": "/React-Portfolio/static/js/main.4902a54c.js.map",
     "787.a2cb61a6.chunk.js.map": "/React-Portfolio/static/js/787.a2cb61a6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c050ecb4.css",
-    "static/js/main.fba3ebac.js"
+    "static/css/main.ac2bbfa0.css",
+    "static/js/main.4902a54c.js"
   ]
 }
