@@ -3,6 +3,7 @@ import "./../../App.css";
 import linkedin from './../img/linkedin_logo_icon.png';
 import instagram from './../img/instagram_logo_icon.png';
 import twitter from './../img/twitter_logo_icon.png';
+import github from './../img/jam--github.png';
 import { Toaster, toast } from 'sonner';
 
 export default function ContactForm() {
@@ -21,6 +22,9 @@ export default function ContactForm() {
         }
         else if (e.currentTarget.id === 'twitter') {
             window.location.href = 'https://twitter.com/ArjunRGowda6';
+        }
+        else if (e.currentTarget.id === "github"){
+            window.location.href = "https://github.com/Arjunr7019"
         }
     }
 
@@ -56,7 +60,7 @@ export default function ContactForm() {
                 <h1 className='fw-bold mb-4'>Contact Us</h1>
                 <div
                     className='width-100 cardBorder  d-flex justify-content-between align-items-start flex-sm-row flex-column rounded-3 p-4'>
-                    <form className='width-100 mx-2'>
+                    <form className='width-100 mx-2 mb-5 mb-sm-0'>
                         <div className="mb-3">
                             <label htmlFor="InputName" className="form-label fw-bold">Name</label>
                             <input type="name" value={nameValue} onChange={(e)=> setName(e.target.value)} className="form-control" id="InputName" />
@@ -84,15 +88,18 @@ export default function ContactForm() {
                                 <a href="/">+91 7019629505</a>
                             </li>
                         </div>
-                        <div className='width-100 d-flex justify-content-around align-items-center flex-row flex-wrap py-4'>
-                            <div onClick={links} id="LinkedIn" className='links-contact default-border rounded-3 p-2 mt-sm-2 mt-0'>
-                                <img src={linkedin} alt="LinkedIn" />
+                        <div className='width-100 d-flex justify-content-between align-items-center flex-row flex-wrap py-4'>
+                            <div onClick={links} id="LinkedIn" style={{width:"20%"}} className='links-contact default-border rounded-3 p-2 mt-sm-2 mt-0'>
+                                <img className='w-100' src={linkedin} alt="LinkedInIcon" />
                             </div>
-                            <div onClick={links} id="Instagram" className='links-contact default-border rounded-3 p-2 mt-sm-2 mt-0'>
-                                <img src={instagram} alt="Instagram" />
+                            <div onClick={links} id="Instagram" style={{width:"20%"}} className='links-contact default-border rounded-3 p-2 mt-sm-2 mt-0'>
+                                <img className='w-100' src={instagram} alt="InstagramIcon" />
                             </div>
-                            <div onClick={links} id="twitter" className='links-contact default-border rounded-3 p-2 mt-sm-2 mt-0'>
-                                <img src={twitter} alt="twitter" />
+                            <div onClick={links} id="twitter" style={{width:"20%"}} className='links-contact default-border rounded-3 p-2 mt-sm-2 mt-0'>
+                                <img className='w-100' src={twitter} alt="twitterIcon" />
+                            </div>
+                            <div onClick={links} id="github" style={{width:"20%"}} className='links-contact default-border rounded-3 p-2 mt-sm-2 mt-0'>
+                                <img className='w-100' src={github} alt="githuIcon" />
                             </div>
                         </div>
                     </div>
