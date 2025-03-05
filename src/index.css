@@ -4,6 +4,10 @@
     width: 46%;
 }
 
+#spyAbout{
+    height: 90vh !important;
+}
+
 .profileArea {
     width: 56px;
     height: 56px;
@@ -291,9 +295,9 @@
 .links-contact{
     cursor: pointer;
 }
-.links-contact img {
-    /* height: 86px; */
-}
+/* .links-contact img {
+    height: 86px;
+} */
 
 #forHeight {
     height: fit-content;
@@ -324,7 +328,7 @@ body {
 }
 
 .default-margin-x-y {
-    margin: 5rem 5rem 10rem 5rem;
+    padding: 5rem 5rem 10rem 5rem;
 }
 
 .default-border {
@@ -368,8 +372,11 @@ html footer a {
 
 
 @media screen and (max-width: 576px) {
+    #spyAbout{
+        height: 60vh !important;
+    }
     .default-margin-x-y {
-        margin: 4rem 2.5rem 5rem 2.5rem;
+        padding: 4rem 2.5rem 5rem 2.5rem;
     }
 
     #scrollspyHeading4 form {

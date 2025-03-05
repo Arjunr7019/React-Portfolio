@@ -122,9 +122,9 @@ export default function Main() {
 
     
     return (
-        <>
+        <div className='w-100'>
             {/* <!-- ---------------------Header Start------------------------------------ --> */}
-            <div className='positionSticky d-flex flex-row justify-content-sm-around justify-content-between mt-4 mx-4 mx-x-0'>
+            <div className='positionSticky d-flex flex-row justify-content-sm-around justify-content-between mt-4 mx-4 mx-sm-0'>
                 <div className='profileArea d-flex justify-content-center align-items-center'>
                     <img className='profileImage' src={profileImage2} alt='profileImage' />
                 </div>
@@ -237,6 +237,6 @@ export default function Main() {
                 </a>
             </div>
             <Toaster position="bottom-right" />
-        </>
+        </div>
     )
 }

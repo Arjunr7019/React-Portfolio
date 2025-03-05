@@ -25,7 +25,6 @@ export default function About() {
             setScrollValue(window.scrollY/80);
         }
     })
-    console.log(scrollValue)
     return (
         <div id="spyAbout"
             style={{ height: '90vh' }}
