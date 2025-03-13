@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './../App.css';
-import { Toaster, toast } from 'sonner';
+import { Toaster } from 'sonner';
 import profileImage2 from './img/profile-image2.png';
 import { Link } from 'react-scroll';
 import Qualification from './Qualification/Qualification';
@@ -14,9 +14,9 @@ export default function Main() {
     const containerRef = useRef(null);
     // const [navButton, setNavButton] = useState(false);
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+    // useEffect(() => {
+    //     fetchData();
+    // }, []);
 
     useEffect(() => {
             const observer = new IntersectionObserver(
@@ -55,15 +55,15 @@ export default function Main() {
             };
     }, [])
 
-    const fetchData = async () => {
-        const response = await fetch('https://portfolio-server-ngoy.onrender.com/api');
+    // const fetchData = async () => {
+    //     const response = await fetch('https://portfolio-server-ngoy.onrender.com/api');
 
-        if (response.status === 200) {
-            toast.success('server started successfully.');
-        } else {
-            // The user is not authenticated.
-        }
-    }
+    //     if (response.status === 200) {
+    //         toast.success('server started successfully.');
+    //     } else {
+    //         // The user is not authenticated.
+    //     }
+    // }
 
     const navChange = (e) => {
         if (e.currentTarget.id === 'about') {
