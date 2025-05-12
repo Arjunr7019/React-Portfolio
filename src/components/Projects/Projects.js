@@ -8,51 +8,17 @@ import InstagramReelPostDownloader from '../img/InstagramReelPostDownloader.png'
 import ProjectMusicApp from '../img/projectMusicApp.jpg';
 import ProjectBloodReport from '../img/bloodReport.png';
 import ProjectToDoList from '../img/toDoList.png';
+import ProjectChatApp from '../img/ChatApp.png';
 
 export default function Projects() {
-
+    
     const projects = [
         {
-            name: "Weather Forecast",
-            image: WeatherForecast,
-            id: "projectWeather",
+            name: "Chat App (Jelly Fish)",
+            image: ProjectChatApp,
+            id: "projectChatAppt",
             apkFile: false,
-            link: 'https://arjunr7019.github.io/WeatherForecast/'
-        },
-        {
-            name: "Tablenoms Site",
-            image: TablenomsSite,
-            id: "projectTablenoms",
-            apkFile: false,
-            link: 'https://tablenoms.com/'
-        },
-        {
-            name: "Stop Clock",
-            image: StopClock,
-            id: "projectStopClock",
-            apkFile: false,
-            link: 'https://arjunr7019.github.io/StopClock/'
-        },
-        {
-            name: "Online Code Edtior",
-            image: onlineCodeEdtior,
-            id: "projectOnlineCodeEdtior",
-            apkFile: false,
-            link: 'https://arjunr7019.github.io/online-code-editor/'
-        },
-        {
-            name: "Instagram Reel & Post Downloader",
-            image: InstagramReelPostDownloader,
-            id: "projectInstagram",
-            apkFile: false,
-            link: 'https://arjunr7019.github.io/insta-download/'
-        },
-        {
-            name: "MusicApp(React-native)",
-            image: ProjectMusicApp,
-            id: "projectMusicApp",
-            apkFile: true, apkLink: 'https://drive.google.com/file/d/1nUzvHpzc_HdV8gL42M5-_STdDHYoGdu3/view?usp=sharing',
-            link: 'https://github.com/Arjunr7019/musicApp'
+            link: 'https://arjunr7019.github.io/chat-app-client/'
         },
         {
             name: "Blood Report",
@@ -62,12 +28,54 @@ export default function Projects() {
             link: 'https://arjunr7019.github.io/bloodReport/'
         },
         {
+            name: "Online Code Edtior",
+            image: onlineCodeEdtior,
+            id: "projectOnlineCodeEdtior",
+            apkFile: false,
+            link: 'https://arjunr7019.github.io/online-code-editor/'
+        },
+        {
+            name: "Music App (React-native)",
+            image: ProjectMusicApp,
+            id: "projectMusicApp",
+            apkFile: true, apkLink: 'https://drive.google.com/file/d/1nUzvHpzc_HdV8gL42M5-_STdDHYoGdu3/view?usp=sharing',
+            link: 'https://github.com/Arjunr7019/musicApp'
+        },
+        {
             name: "To Do List",
             image: ProjectToDoList,
             id: "projectToDoList",
             apkFile: false,
             link: 'https://arjunr7019.github.io/to-do-list/'
-        }
+        },
+        {
+            name: "Stop Clock",
+            image: StopClock,
+            id: "projectStopClock",
+            apkFile: false,
+            link: 'https://arjunr7019.github.io/StopClock/'
+        },
+        {
+            name: "Tablenoms Site",
+            image: TablenomsSite,
+            id: "projectTablenoms",
+            apkFile: false,
+            link: 'https://tablenoms.com/'
+        },
+        {
+            name: "Weather Forecast",
+            image: WeatherForecast,
+            id: "projectWeather",
+            apkFile: false,
+            link: 'https://arjunr7019.github.io/WeatherForecast/'
+        },
+        {
+            name: "Instagram Reel & Post Downloader",
+            image: InstagramReelPostDownloader,
+            id: "projectInstagram",
+            apkFile: false,
+            link: 'https://arjunr7019.github.io/insta-download/'
+        },
     ]
     return (
         <div id="spyProjects" className='default-margin-x-y d-flex justify-content-center align-items-center flex-column'>
