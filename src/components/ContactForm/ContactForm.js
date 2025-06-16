@@ -1,20 +1,17 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import "./../../App.css";
 import linkedin from './../img/linkedin_logo_icon.png';
 import instagram from './../img/instagram_logo_icon.png';
 import twitter from './../img/twitter_logo_icon.png';
 import github from './../img/jam--github.png';
-import { Toaster, toast } from 'sonner';
-import {bouncyArc} from 'ldrs';
+import { bouncyArc } from 'ldrs';
 import { GlobalResourceContext } from '../../context/GlobalResourceContext';
+import { ContactFormContext } from '../../context/ContactFormContext';
 
 export default function ContactForm() {
 
-    const{serverUp} = useContext(GlobalResourceContext);
-
-    const [nameValue, setName] = useState('');
-    const [emailValue, setEmail] = useState('');
-    const [messageValue, setMessage] = useState('');
+    const { serverUp } = useContext(GlobalResourceContext);
+    const { formData, setFormData,sendForm } = useContext(ContactFormContext);
 
     bouncyArc.register()
 
@@ -34,32 +31,6 @@ export default function ContactForm() {
         }
     }
 
-    const sendForm = async (e) => {
-        e.preventDefault();
-        let name = nameValue;
-        let email = emailValue;
-        let message = messageValue;
-
-        const response = await fetch('https://portfolio-server-ngoy.onrender.com/api/contactForm', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name,
-                email,
-                message
-            })
-        });
-
-        if (response.status === 200) {
-            // The user is authenticated.
-            toast.success('Form sent successfully.');
-        } else {
-            // The user is not authenticated.
-        }
-    }
-
     return (
         <div>
             <div id="spyContact" className='default-margin-x-y d-flex justify-content-center align-items-center flex-column'>
@@ -69,26 +40,26 @@ export default function ContactForm() {
                     {serverUp ? <form className='width-100 mx-2 mb-5 mb-sm-0'>
                         <div className="mb-3">
                             <label htmlFor="InputName" className="form-label fw-bold">Name</label>
-                            <input type="name" value={nameValue} onChange={(e) => setName(e.target.value)} className="form-control" id="InputName" />
+                            <input type="name" value={formData?.name} onChange={(e) => setFormData(val => { return { ...val, name: e.target.value } })} className="form-control" id="InputName" />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleInputEmail1" className="form-label fw-bold">Email address</label>
-                            <input type="email" value={emailValue} onChange={(e) => setEmail(e.target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            <input type="email" value={formData?.email} onChange={(e) => setFormData(val => { return { ...val, email: e.target.value } })} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleFormControlTextarea1" className="form-label fw-bold">Message</label>
-                            <textarea style={{ resize: "none" }} className="form-control" value={messageValue} onChange={(e) => setMessage(e.target.value)} id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea style={{ resize: "none" }} className="form-control" value={formData?.message} onChange={(e) => setFormData(val => { return { ...val, message: e.target.value } })} id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
-                        <button type="submit" onClick={sendForm} className="btn-for-projects">Submit</button>
-                    </form>:
-                    <div className='width-100 h-100 default-border p-4 py-5 rounded-3 d-flex justify-content-center align-items-center flex-column'>
-                        <l-bouncy-arc
-                            size="70"
-                            speed="1.65"
-                            color="black"
-                        ></l-bouncy-arc>
-                        <h4 className='mt-4'>Waiting for Server</h4>
-                    </div>}
+                        <button type="submit" onClick={(e)=>sendForm(e)} className="btn-for-projects">Submit</button>
+                    </form> :
+                        <div className='width-100 h-100 default-border p-4 py-5 rounded-3 d-flex justify-content-center align-items-center flex-column'>
+                            <l-bouncy-arc
+                                size="70"
+                                speed="1.65"
+                                color="black"
+                            ></l-bouncy-arc>
+                            <h4 className='mt-4'>Waiting for Server</h4>
+                        </div>}
                     <div id='forHeight'
                         className='width-50 d-flex justify-content-sm-start justify-content-end align-items-center flex-column mx-2'>
                         <h3>Contact Info</h3>
@@ -119,7 +90,6 @@ export default function ContactForm() {
                     </div>
                 </div>
             </div>
-            <Toaster position="bottom-right" />
         </div>
     )
 }
