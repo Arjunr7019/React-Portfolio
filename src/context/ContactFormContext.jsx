@@ -8,6 +8,7 @@ export const ContactFormContextProvider = ({ children }) => {
     const [userInfo, setUserInfo] = useState({});
 
     useEffect(() => {
+        // const startTime = performance.now();
         const otherData = `UserAgent: ${navigator.userAgent}
             Platform: ${navigator.platform}
             language: ${navigator.language}`
@@ -18,23 +19,28 @@ export const ContactFormContextProvider = ({ children }) => {
         };
         fetch("https://get.geojs.io/v1/ip/geo.json", requestOptions)
             .then((response) => response.json())
-            .then((result) => { setUserInfo(val => { return { ...val, data: result } });
-              })
-            .catch((error) => console.error(error));
-
-
-            // console.log(userInfo)
-        fetch("https://portfolio-server-ngoy.onrender.com/api/userInfo", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                userInfo
+            .then((result) => {
+                setUserInfo(val => { return { ...val, data: result } });
+                // console.log(result);
             })
-        }).then((response) => response.json())
-            .then((result) => console.log(result))
             .catch((error) => console.error(error));
+            // const endTime = performance.now();
+
+            // console.log(`Execution time: ${endTime - startTime} ms`);
+        // console.log(userInfo)
+        setTimeout(()=>{
+            fetch("https://portfolio-server-ngoy.onrender.com/api/userInfo", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    userInfo
+                })
+            }).then((response) => response.json())
+                .then((result) => console.log(result))
+                .catch((error) => console.error(error));
+        },[5000])
     }, [])
 
     const sendForm = async (e) => {

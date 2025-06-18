@@ -13,7 +13,7 @@ export const GlobalResourceContextProvider = ({children})=>{
               throw new Error(`Failed with status: ${response.status}`);
             }
           }).then((data)=>{
-            console.log(data);
+            // console.log(data);
             setServerUp(true);
           }).catch(err => {
             console.log("error:", err);
