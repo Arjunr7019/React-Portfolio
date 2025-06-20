@@ -6,12 +6,25 @@ export const ContactFormContext = createContext(null);
 export const ContactFormContextProvider = ({ children }) => {
     const [formData, setFormData] = useState({});
     const [userInfo, setUserInfo] = useState({});
+    const [serverUp, setServerUp] = useState(false);
 
     useEffect(() => {
-        // const startTime = performance.now();
-        const otherData = `UserAgent: ${navigator.userAgent}
-            Platform: ${navigator.platform}
-            language: ${navigator.language}`
+        fetch('https://portfolio-server-ngoy.onrender.com/api').then((response) => {
+            if (response.status === 200) {
+                return response.json(); // Parse the JSON only if status is 200
+            } else {
+                throw new Error(`Failed with status: ${response.status}`);
+            }
+        }).then((data) => {
+            // console.log(data);
+            setServerUp(true);
+        }).catch(err => {
+            console.log("error:", err);
+        });
+
+        const otherData = {"UserAgent": navigator.userAgent,
+            "Platform": navigator.platform,
+            "language": navigator.language}
         setUserInfo(val => { return { ...val, otherData: otherData } });
         const requestOptions = {
             method: "GET",
@@ -24,11 +37,16 @@ export const ContactFormContextProvider = ({ children }) => {
                 // console.log(result);
             })
             .catch((error) => console.error(error));
-            // const endTime = performance.now();
+    }, [])
 
-            // console.log(`Execution time: ${endTime - startTime} ms`);
-        // console.log(userInfo)
-        setTimeout(()=>{
+    useEffect(() => {
+        // const startTime = performance.now();
+        // const endTime = performance.now();
+
+        // console.log(`Execution time: ${endTime - startTime} ms`);
+        console.log("useEffect",userInfo)
+
+        if (serverUp && userInfo.data) {
             fetch("https://portfolio-server-ngoy.onrender.com/api/userInfo", {
                 method: 'POST',
                 headers: {
@@ -40,17 +58,17 @@ export const ContactFormContextProvider = ({ children }) => {
             }).then((response) => response.json())
                 .then((result) => console.log(result))
                 .catch((error) => console.error(error));
-        },[5000])
-    }, [])
+        }
+    }, [serverUp,userInfo])
 
-    const sendForm = async (e) => {
+    const sendForm = (e) => {
         e.preventDefault();
         if (formData.name && formData.email && formData.message) {
             let name = formData.name;
             let email = formData.email;
             let message = formData.message;
 
-            const response = await fetch('https://portfolio-server-ngoy.onrender.com/api/contactForm', {
+            fetch('https://portfolio-server-ngoy.onrender.com/api/contactForm', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -61,22 +79,21 @@ export const ContactFormContextProvider = ({ children }) => {
                     message,
                     userInfo
                 })
-            });
-
-            if (response.status === 200) {
-                // The user is authenticated.
-                toast.success('Form sent successfully.');
-            } else {
-                // The user is not authenticated.
-                toast.error(response.json())
-            }
+            }).then((response) => {
+                if (response.status === 200) {
+                    return response.json();
+                } else {
+                    throw new Error(response.json());
+                }
+            }).then((result) => toast.success('Form sent successfully.'))
+                .catch((error) => toast.error(error));
         } else {
             toast.warning("Provide all Inputs data!")
         }
     }
 
     return (
-        <ContactFormContext.Provider value={{ formData, setFormData, sendForm }}>
+        <ContactFormContext.Provider value={{ serverUp, formData, setFormData, sendForm }}>
             {children}
             <Toaster position="bottom-right" />
         </ContactFormContext.Provider>

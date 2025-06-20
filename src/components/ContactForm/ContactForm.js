@@ -9,9 +9,7 @@ import { GlobalResourceContext } from '../../context/GlobalResourceContext';
 import { ContactFormContext } from '../../context/ContactFormContext';
 
 export default function ContactForm() {
-
-    const { serverUp } = useContext(GlobalResourceContext);
-    const { formData, setFormData,sendForm } = useContext(ContactFormContext);
+    const { serverUp,formData, setFormData,sendForm } = useContext(ContactFormContext);
 
     bouncyArc.register()
 
