@@ -5,7 +5,6 @@ import instagram from './../img/instagram_logo_icon.png';
 import twitter from './../img/twitter_logo_icon.png';
 import github from './../img/jam--github.png';
 import { bouncyArc } from 'ldrs';
-import { GlobalResourceContext } from '../../context/GlobalResourceContext';
 import { ContactFormContext } from '../../context/ContactFormContext';
 
 export default function ContactForm() {
