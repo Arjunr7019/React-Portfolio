@@ -6,9 +6,10 @@ import twitter from './../img/twitter_logo_icon.png';
 import github from './../img/jam--github.png';
 import { bouncyArc } from 'ldrs';
 import { ContactFormContext } from '../../context/ContactFormContext';
+import { Toaster, toast } from 'sonner';
 
 export default function ContactForm() {
-    const { serverUp,formData, setFormData,sendForm } = useContext(ContactFormContext);
+    const { serverUp, formData, setFormData, sendForm } = useContext(ContactFormContext);
 
     bouncyArc.register()
 
@@ -47,7 +48,17 @@ export default function ContactForm() {
                             <label htmlFor="exampleFormControlTextarea1" className="form-label fw-bold">Message</label>
                             <textarea style={{ resize: "none" }} className="form-control" value={formData?.message} onChange={(e) => setFormData(val => { return { ...val, message: e.target.value } })} id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
-                        <button type="submit" onClick={(e)=>sendForm(e)} className="btn-for-projects">Submit</button>
+                        <button type="submit" onClick={(e) => {
+                            toast.promise(sendForm(e), {
+                                loading: 'Sending...',
+                                success: (data) => {
+                                    return `${data}`;
+                                },
+                                error: (error) => {
+                                    return `${error}`;
+                                },
+                            })
+                        }} className="btn-for-projects">Submit</button>
                     </form> :
                         <div className='width-100 h-100 default-border p-4 py-5 rounded-3 d-flex justify-content-center align-items-center flex-column'>
                             <l-bouncy-arc
@@ -87,6 +98,7 @@ export default function ContactForm() {
                     </div>
                 </div>
             </div>
+            <Toaster position="bottom-right" />
         </div>
     )
 }

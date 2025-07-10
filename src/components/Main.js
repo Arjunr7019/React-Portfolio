@@ -26,7 +26,7 @@ export default function Main() {
                     entries.forEach((entry) => {
                         if (ids.includes(entry.target.id)) {
                             updatedInView[entry.target.id] = entry.isIntersecting;
-                            // console.log(updatedInView.spyAbout)
+                            // console.log(entry.target.id)
                         }
                     });
                     // console.log(updatedInView)
