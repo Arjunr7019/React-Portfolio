@@ -25,7 +25,7 @@ export default function Qualification() {
                                     <span className="material-symbols-outlined iconSize">
                                         calendar_month
                                     </span>
-                                    <p className='fw-bold m-0 fontSizeParagraph'>2021 - 2024</p>
+                                    <p className='fw-bold m-0 fontSizeParagraph'>2022 - 2024</p>
                                 </div>
                             </div>
                         </div>
