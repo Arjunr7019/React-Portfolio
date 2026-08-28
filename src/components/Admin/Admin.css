@@ -1,0 +1,50 @@
+.admin-login-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    background: #f5f5f5;
+}
+
+.admin-login-card {
+    width: 100%;
+    max-width: 380px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.admin-dashboard {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.admin-form {
+    background: #fafafa;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    border: 1px solid #eee;
+}
+
+.admin-thumb {
+    width: 64px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 0.25rem;
+}
+
+.btn-for-projects-secondary {
+    background: #e9e9e9;
+    color: #111;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.4rem 1rem;
+    font-weight: 600;
+}
+
+.btn-for-projects-danger {
+    background: #ffe1e1;
+    color: #b30000;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.4rem 1rem;
+    font-weight: 600;
+}

@@ -6,26 +6,28 @@ import twitter from './../img/twitter_logo_icon.png';
 import github from './../img/jam--github.png';
 import { bouncyArc } from 'ldrs';
 import { ContactFormContext } from '../../context/ContactFormContext';
+import { PortfolioDataContext } from '../../context/PortfolioDataContext';
 import { Toaster, toast } from 'sonner';
 
 export default function ContactForm() {
     const { serverUp, formData, setFormData, sendForm } = useContext(ContactFormContext);
+    const { contactInfo } = useContext(PortfolioDataContext);
 
     bouncyArc.register()
 
     const links = (e) => {
         e.preventDefault();
         if (e.currentTarget.id === 'LinkedIn') {
-            window.location.href = 'https://www.linkedin.com/in/arjun-r-634413236/';
+            window.location.href = contactInfo.linkedin;
         }
         else if (e.currentTarget.id === 'Instagram') {
-            window.location.href = 'https://www.instagram.com/rgowdaarjun/';
+            window.location.href = contactInfo.instagram;
         }
         else if (e.currentTarget.id === 'twitter') {
-            window.location.href = 'https://twitter.com/ArjunRGowda6';
+            window.location.href = contactInfo.twitter;
         }
         else if (e.currentTarget.id === "github") {
-            window.location.href = "https://github.com/Arjunr7019"
+            window.location.href = contactInfo.github;
         }
     }
 
@@ -73,12 +75,12 @@ export default function ContactForm() {
                         <h3>Contact Info</h3>
                         <div
                             className='width-100 default-border contactInfo d-felx justify-content-center align-items-center flex-column p-4 rounded-3'>
-                            <h5 className='text-center'>Arjun R</h5>
+                            <h5 className='text-center'>{contactInfo.name}</h5>
                             <li className='pb-2 text-center'>
-                                <a href="/">rarjun7019@gmail.com</a>
+                                <a href="/" onClick={(e) => e.preventDefault()}>{contactInfo.email}</a>
                             </li>
                             <li className='pb-2 text-center'>
-                                <a href="/">+91 7019629505</a>
+                                <a href="/" onClick={(e) => e.preventDefault()}>{contactInfo.phone}</a>
                             </li>
                         </div>
                         <div className='width-100 d-flex justify-content-between align-items-center flex-row flex-wrap py-4'>
