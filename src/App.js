@@ -13,7 +13,7 @@ function App() {
   return (
     <PortfolioDataContextProvider>
       <AdminAuthContextProvider>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter basename="React-Portfolio">
           <Routes>
             <Route path="/" element={
               <ContactFormContextProvider>
