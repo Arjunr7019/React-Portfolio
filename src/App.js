@@ -1,6 +1,6 @@
 import './App.css';
 import Main from './components/Main';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ContactFormContextProvider } from './context/ContactFormContext';
 import { PortfolioDataContextProvider } from './context/PortfolioDataContext';
 import { AdminAuthContextProvider } from './context/AdminAuthContext';
@@ -13,7 +13,7 @@ function App() {
   return (
     <PortfolioDataContextProvider>
       <AdminAuthContextProvider>
-        <BrowserRouter basename="React-Portfolio">
+        <HashRouter>
           <Routes>
             <Route path="/" element={
               <ContactFormContextProvider>
@@ -27,7 +27,7 @@ function App() {
               </ProtectedRoute>
             } />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </AdminAuthContextProvider>
     </PortfolioDataContextProvider>
   );
